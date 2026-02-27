@@ -111,7 +111,7 @@ Full config examples are in each template's README.
 All 8 templates (3 free + 5 paid) for a one-time £19.
 
 - Stripe: [Buy for £19](https://buy.stripe.com/9B6dR300j8tL6A7aNQ9ws00)
-- Gumroad: [GUMROAD_URL]
+- Gumroad: https://buy.stripe.com/9B6dR300j8tL6A7aNQ9ws00 (Gumroad listing coming soon)
 
 No subscription. You get the files, you keep them.
 
