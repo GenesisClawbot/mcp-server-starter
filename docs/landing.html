@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCP Server Starter Pack — 8 production-ready Python templates</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0e0e0e;
+      color: #d4d4d4;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+      padding: 0 1rem;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 4rem 0 3rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      color: #666;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      color: #f0f0f0;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #999;
+      margin-bottom: 2.5rem;
+      border-left: 3px solid #333;
+      padding-left: 1rem;
+    }
+
+    h2 {
+      font-size: 0.85rem;
+      color: #888;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .templates-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      .templates-grid { grid-template-columns: 1fr; }
+    }
+
+    .template-group {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 4px;
+      padding: 1.25rem;
+    }
+
+    .template-group.paid {
+      border-color: #2a2a2a;
+    }
+
+    .group-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .group-label.free { color: #4a9; }
+    .group-label.paid-label { color: #88aaff; }
+
+    .template-group ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .template-group ul li {
+      font-size: 0.85rem;
+      color: #bbb;
+      padding: 0.3rem 0;
+      padding-left: 1rem;
+      position: relative;
+      border-bottom: none;
+    }
+
+    .template-group ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: #555;
+    }
+
+    .callout {
+      background: #0a0a0a;
+      border: 1px solid #2a2a2a;
+      border-left: 3px solid #88aaff;
+      border-radius: 0 4px 4px 0;
+      padding: 1rem 1.25rem;
+      margin: 2rem 0;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .callout strong {
+      color: #e0e0e0;
+    }
+
+    pre {
+      background: #0a0f1a;
+      border: 1px solid #1a2540;
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin: 1.25rem 0 2rem;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #a8c4e0;
+    }
+
+    .kw { color: #88aaff; }
+    .fn { color: #79d9b0; }
+    .st { color: #f0a070; }
+    .cm { color: #555; }
+
+    .price-block {
+      background: #141414;
+      border: 1px solid #222;
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #f0f0f0;
+    }
+
+    .price-note {
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 0.2rem;
+    }
+
+    .price-note a {
+      color: #4a9;
+      text-decoration: none;
+    }
+
+    .price-note a:hover {
+      text-decoration: underline;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      background: #f0f0f0;
+      color: #0e0e0e;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      padding: 0.75rem 2rem;
+      border-radius: 3px;
+      transition: background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .buy-btn:hover {
+      background: #ffffff;
+    }
+
+    .author {
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 2.5rem;
+    }
+
+    footer {
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #1a1a1a;
+      font-size: 0.8rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <p class="tag">Python Templates / £19</p>
+
+    <h1>8 MCP server templates for Claude Desktop. Python. Production-ready.</h1>
+
+    <p class="subhead">
+      Stop writing boilerplate. Each template is tested, uses the correct
+      stdio_server() pattern for MCP 1.26.0+, and has the gotchas already handled.
+    </p>
+
+    <h2>Free vs. paid</h2>
+
+    <div class="templates-grid">
+      <div class="template-group">
+        <div class="group-label free">Free on GitHub</div>
+        <ul>
+          <li>SQLite</li>
+          <li>Web Search</li>
+          <li>System Shell</li>
+        </ul>
+      </div>
+      <div class="template-group paid">
+        <div class="group-label paid-label">Full pack (£19)</div>
+        <ul>
+          <li>SQLite</li>
+          <li>Web Search</li>
+          <li>System Shell</li>
+          <li>GitHub API</li>
+          <li>Memory (SQLite-backed)</li>
+          <li>Notion</li>
+          <li>Slack</li>
+          <li>Linear</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>MCP 1.26.0 changed the transport pattern.</strong> Old tutorials show the wrong approach.
+      These templates use the current one.
+    </div>
+
+    <h2>The pattern that actually works</h2>
+
+    <pre><span class="kw">from</span> mcp.server.stdio <span class="kw">import</span> stdio_server
+
+<span class="kw">async def</span> <span class="fn">main</span>():
+    <span class="kw">async with</span> <span class="fn">stdio_server</span>() <span class="kw">as</span> (read_stream, write_stream):
+        <span class="kw">await</span> server.<span class="fn">run</span>(read_stream, write_stream,
+                         server.<span class="fn">create_initialization_options</span>())
+
+<span class="fn">asyncio</span>.<span class="fn">run</span>(<span class="fn">main</span>())</pre>
+
+    <div class="price-block">
+      <div>
+        <div class="price">£19</div>
+        <div class="price-note">
+          Full pack, instant download.
+          <br>Free 3-template pack on
+          <a href="https://github.com/GenesisClawbot/mcp-server-starter" target="_blank" rel="noopener">GitHub</a>.
+        </div>
+      </div>
+      <a class="buy-btn" href="https://buy.stripe.com/cNi28l5kDbFX1fNaNQ9ws03" target="_blank" rel="noopener">Buy full pack</a>
+    </div>
+
+    <p class="author">by Jamie Cole, indie developer UK</p>
+
+    <footer>
+      8 templates. One correct transport pattern. No boilerplate to figure out yourself.
+    </footer>
+
+  </div>
+</body>
+</html>
